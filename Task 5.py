@@ -5,14 +5,13 @@ from functools import lru_cache
 
 @lru_cache()
 def fibonacci(num: int):
-    print(f"Считаю {num} число Фибоначчи")
     if num == 0:
         return 0
     if num in [-1, 1, 2]:
         return 1
     if num > 2:
         return fibonacci(num - 1) + fibonacci(num - 2)
-    if num < -1:
+    if num <= -2:
         return fibonacci(num + 2) - fibonacci(num + 1)
 
 
